@@ -21,7 +21,7 @@ A Claude Code plugin for creating clear, consistent Git commit messages and safe
 1. In Claude Code, add the GitHub-hosted marketplace:
 
 ```text
-/plugin marketplace add coniferous-cmd/git-commit-skill
+/plugin marketplace add coniferous-cmd/agent-plugins
 ```
 
 2. Install the plugin:
