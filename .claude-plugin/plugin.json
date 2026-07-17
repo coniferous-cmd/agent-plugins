@@ -1,0 +1,8 @@
+{
+  "name": "git-workflow",
+  "description": "Claude skill for writing clear, well-structured Git commit messages following the seven rules from cbea.ms/git-commit",
+  "version": "0.0.2",
+  "author": {
+    "name": "coniferous-cmd"
+  }
+}

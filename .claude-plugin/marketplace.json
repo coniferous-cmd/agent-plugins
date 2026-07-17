@@ -1,0 +1,16 @@
+{
+  "name": "coniferous-cmd-plugins",
+  "description": "Claude Code plugins by coniferous-cmd",
+  "owner": {
+    "name": "coniferous-cmd"
+  },
+  "plugins": [
+    {
+      "name": "git-workflow",
+      "source": "./",
+      "description": "Claude Code skills for writing clear Git commit messages and safely pushing commits.",
+      "version": "0.0.2",
+      "category": "productivity"
+    }
+  ]
+}
