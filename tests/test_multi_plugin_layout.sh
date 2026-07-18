@@ -37,6 +37,19 @@ for plugin in git-workflow todo-board; do
   assert_branch_has_only claude "plugins/$plugin/.claude-plugin/plugin.json" "plugins/$plugin/.codex-plugin/plugin.json"
 done
 
+for branch in codex claude; do
+  for plugin in git-workflow todo-board; do
+    branch_files "$branch" | rg -q "^plugins/$plugin/skills/"
+  done
+done
+
+for plugin in git-workflow todo-board; do
+  [[ ! -L "$repo_root/plugins/$plugin/skills" ]] || {
+    print -u2 "$plugin skills must be a local directory, not a symbolic link"
+    exit 1
+  }
+done
+
 codex_readme="$(git -C "$repo_root" show codex:README.md)"
 claude_readme="$(git -C "$repo_root" show claude:README.md)"
 
@@ -49,7 +62,7 @@ assert_skill_model() {
   local branch="$1"
   local skill="$2"
   local expected="$3"
-  local skill_path="shared/git-workflow/skills/$skill/SKILL.md"
+  local skill_path="plugins/git-workflow/skills/$skill/SKILL.md"
   local current_branch
   local actual
 
