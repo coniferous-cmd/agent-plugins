@@ -12,6 +12,14 @@ Provides two Git workflow skills:
 - `commit`: Create or review clear, consistent Git commit messages.
 - `push`: Push the current branch safely without force-pushing by default.
 
+### `todo-board`
+
+Manages queued implementation work for a project:
+
+- `push`: Save a finalized implementation task.
+- `list`: View incomplete tasks.
+- `next`: Retrieve and complete the next task.
+
 ## Installation
 
 ### From the Claude plugin marketplace
@@ -25,7 +33,7 @@ Provides two Git workflow skills:
 2. Install the plugin you need:
 
 ```text
-/plugin install git-workflow@coniferous-cmd-plugins
+/plugin install todo-board@coniferous-cmd-plugins
 ```
 
 3. Reload plugins if Claude Code is already running:
@@ -39,14 +47,15 @@ Provides two Git workflow skills:
 Load an individual plugin for a session:
 
 ```bash
-claude --plugin-dir /path/to/agent-plugins/plugins/git-workflow
+claude --plugin-dir /path/to/agent-plugins/plugins/todo-board
 ```
 
 Its skills are then available as:
 
 ```text
-/git-workflow:commit
-/git-workflow:push
+/todo-board:push
+/todo-board:list
+/todo-board:next
 ```
 
 ## Adding a plugin
