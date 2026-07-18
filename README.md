@@ -14,15 +14,17 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ### Claude Code
 
 ```bash
-claude plugins install coniferous-cmd/agent-plugins/git-workflow
-claude plugins install coniferous-cmd/agent-plugins/todo-board
+/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git
+/plugin install git-workflow@coniferous-cmd-plugins
+/plugin install todo-board@coniferous-cmd-plugins
 ```
 
 ### Codex
 
 ```bash
-codex plugins install coniferous-cmd/agent-plugins/git-workflow
-codex plugins install coniferous-cmd/agent-plugins/todo-board
+codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main
+codex plugin add git-workflow@coniferous-cmd-plugins
+codex plugin add todo-board@coniferous-cmd-plugins
 ```
 
 Start a new agent session after installing or updating a plugin.

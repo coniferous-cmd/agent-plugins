@@ -16,18 +16,15 @@ done
 
 [[ -f "$repo_root/.agents/plugins/marketplace.json" ]]
 [[ -f "$repo_root/.claude-plugin/marketplace.json" ]]
-rg -Fq 'Codex or Claude Code' "$repo_root/README.md" || {
-  print -u2 'README must document one shared Codex and Claude Code flow'
-  exit 1
-}
-rg -Fq '/plugins' "$repo_root/README.md" || {
-  print -u2 'README must document the /plugins entry point'
-  exit 1
-}
-if rg -Fq 'github.com' "$repo_root/README.md"; then
-  print -u2 'README must not include a GitHub domain'
-  exit 1
-fi
+
+readme="$repo_root/README.md"
+rg -F 'codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main' "$readme"
+rg -F 'codex plugin add git-workflow@coniferous-cmd-plugins' "$readme"
+rg -F 'codex plugin add todo-board@coniferous-cmd-plugins' "$readme"
+rg -F '/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git' "$readme"
+rg -F '/plugin install git-workflow@coniferous-cmd-plugins' "$readme"
+rg -F '/plugin install todo-board@coniferous-cmd-plugins' "$readme"
+! rg -F 'plugins install coniferous-cmd/agent-plugins' "$readme"
 
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/skills/commit/SKILL.md" | head -n 1)" == 'gpt-5.5-mini' ]]
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/claude/skills/commit/SKILL.md" | head -n 1)" == 'haiku' ]]
