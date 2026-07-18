@@ -20,12 +20,14 @@ assert_branch_has_only() {
   fi
 }
 
-for branch in codex claude; do
+for branch in codex claude main; do
   git -C "$repo_root" rev-parse --verify --quiet "$branch^{commit}" >/dev/null || {
     print -u2 "Missing required branch: $branch"
     exit 1
   }
 done
+
+[[ "$(branch_files main)" == "README.md" ]]
 
 assert_branch_has_only codex '.agents/plugins/marketplace.json' '.claude-plugin/marketplace.json'
 assert_branch_has_only claude '.claude-plugin/marketplace.json' '.agents/plugins/marketplace.json'
