@@ -1,0 +1,23 @@
+{
+  "name": "coniferous-cmd-plugins",
+  "description": "Claude Code plugins by coniferous-cmd",
+  "owner": {
+    "name": "coniferous-cmd"
+  },
+  "plugins": [
+    {
+      "name": "git-workflow",
+      "source": "./plugins/git-workflow",
+      "description": "Claude Code skills for writing clear Git commit messages and safely pushing commits.",
+      "version": "0.0.2",
+      "category": "productivity"
+    },
+    {
+      "name": "todo-board",
+      "source": "./plugins/todo-board",
+      "description": "Claude Code skill for saving, listing, and completing queued implementation work.",
+      "version": "0.1.0",
+      "category": "productivity"
+    }
+  ]
+}
