@@ -2,7 +2,7 @@
 name: push
 model: haiku
 description: Push local commits to the remote repository.
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 # Git Push
 

@@ -1,0 +1,32 @@
+{
+  "name": "coniferous-cmd-plugins",
+  "interface": {
+    "displayName": "Coniferous Cmd Plugins"
+  },
+  "plugins": [
+    {
+      "name": "git-workflow",
+      "source": {
+        "source": "local",
+        "path": "./plugins/git-workflow"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "todo-board",
+      "source": {
+        "source": "local",
+        "path": "./plugins/todo-board"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

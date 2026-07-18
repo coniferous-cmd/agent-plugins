@@ -1,0 +1,22 @@
+{
+  "name": "git-workflow",
+  "description": "Codex skills for writing clear Git commit messages and safely pushing commits.",
+  "version": "0.0.2",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Git Workflow",
+    "shortDescription": "Write commits and push branches safely.",
+    "longDescription": "Create clear Git commit messages and push the current branch with safe defaults.",
+    "developerName": "coniferous-cmd",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Write a commit message for my staged changes.",
+      "Review this commit message against project conventions.",
+      "Push my current branch safely."
+    ]
+  }
+}
