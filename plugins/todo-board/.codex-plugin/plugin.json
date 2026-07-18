@@ -1,0 +1,22 @@
+{
+  "name": "todo-board",
+  "description": "Codex skill for saving, listing, and completing queued implementation work.",
+  "version": "0.1.0",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Todo Board",
+    "shortDescription": "Manage queued implementation tasks.",
+    "longDescription": "Save, list, and complete implementation tasks in a project-specific queue.",
+    "developerName": "coniferous-cmd",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Show the queued tasks for this project.",
+      "Save this implementation plan to the todo board.",
+      "Retrieve and complete the next queued task."
+    ]
+  }
+}

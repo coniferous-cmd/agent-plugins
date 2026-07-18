@@ -1,0 +1,31 @@
+node_modules/
+.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.local
+
+# AI assistants
+.claude/
+.codex/
+.cursor/
+.cline/
+.roo/
+.gemini/
+.kiro/
+.aider*
+.windsurf/
+.continue/
+.idx/
+.warp/
+.tabnine/
+.codeium/
+.copilot/
+.copilotrc
+.sourcegraph/
+CLAUDE.md
+AGENTS.md
+.github/copilot-instructions.md
+
+# Python
+__pycache__/

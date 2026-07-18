@@ -1,9 +1,32 @@
 # Agent Plugins
 
-This repository keeps agent-specific plugins on separate branches:
+This repository provides plugins for both Codex and Claude Code from the
+single `main` branch. Shared implementation stays under `plugins/*/skills/`;
+platform-specific marketplace metadata and skill frontmatter live alongside it.
 
-- [`codex`](https://github.com/coniferous-cmd/agent-plugins/tree/codex): Codex plugins.
-- [`claude`](https://github.com/coniferous-cmd/agent-plugins/tree/claude): Claude Code plugins.
+## Available plugins
 
-Choose the branch that matches your agent CLI. Each branch contains only that
-agent's marketplace metadata, manifests, plugins, and documentation.
+- `git-workflow`: create clear commit messages and push branches safely.
+- `todo-board`: save, list, and retrieve queued implementation work.
+
+## Install Codex plugins
+
+```bash
+codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main
+codex plugin add git-workflow@coniferous-cmd-plugins
+codex plugin add todo-board@coniferous-cmd-plugins
+```
+
+## Install Claude Code plugins
+
+```bash
+claude plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git#main
+claude plugin install git-workflow@coniferous-cmd-plugins
+claude plugin install todo-board@coniferous-cmd-plugins
+```
+
+Start a new agent session after installing or updating a plugin.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
