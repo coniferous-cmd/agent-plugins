@@ -41,6 +41,10 @@ for branch in codex claude; do
   for plugin in git-workflow todo-board; do
     branch_files "$branch" | rg -q "^plugins/$plugin/skills/"
   done
+  if branch_files "$branch" | rg -q '^shared/'; then
+    print -u2 "$branch must not retain the obsolete shared skill directory"
+    exit 1
+  fi
 done
 
 for plugin in git-workflow todo-board; do
