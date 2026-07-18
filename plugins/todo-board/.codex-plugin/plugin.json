@@ -5,7 +5,7 @@
   "author": {
     "name": "coniferous-cmd"
   },
-  "skills": "./skills/",
+  "skills": "./codex/skills/",
   "interface": {
     "displayName": "Todo Board",
     "shortDescription": "Manage queued implementation tasks.",
