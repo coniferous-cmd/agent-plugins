@@ -1,6 +1,6 @@
 # Agent Plugins — Codex
 
-A Codex-only plugin marketplace. This branch contains only plugins and
+A marketplace of Codex plugins. This branch contains only plugins and
 metadata compatible with the `codex` CLI.
 
 ## Available plugins
