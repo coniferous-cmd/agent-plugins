@@ -11,8 +11,19 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 
 ## Install plugins
 
-In Codex or Claude Code, enter `/plugins`, find the plugin you want, and
-select **Install plugin**.
+### Claude Code
+
+```bash
+claude plugins install coniferous-cmd/agent-plugins/git-workflow
+claude plugins install coniferous-cmd/agent-plugins/todo-board
+```
+
+### Codex
+
+```bash
+codex plugins install coniferous-cmd/agent-plugins/git-workflow
+codex plugins install coniferous-cmd/agent-plugins/todo-board
+```
 
 Start a new agent session after installing or updating a plugin.
 
