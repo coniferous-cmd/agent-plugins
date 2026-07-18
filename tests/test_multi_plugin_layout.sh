@@ -45,4 +45,29 @@ claude_readme="$(git -C "$repo_root" show claude:README.md)"
 [[ "$claude_readme" == *"Claude Code plugins"* ]]
 [[ "$claude_readme" != *"Codex"* ]]
 
+assert_skill_model() {
+  local branch="$1"
+  local skill="$2"
+  local expected="$3"
+  local skill_path="shared/git-workflow/skills/$skill/SKILL.md"
+  local current_branch
+  local actual
+
+  current_branch="$(git -C "$repo_root" branch --show-current)"
+  if [[ "$branch" == "$current_branch" ]]; then
+    actual="$(sed -n 's/^model: //p' "$repo_root/$skill_path" | head -n 1)"
+  else
+    actual="$(git -C "$repo_root" show "$branch:$skill_path" | sed -n 's/^model: //p' | head -n 1)"
+  fi
+  [[ "$actual" == "$expected" ]] || {
+    print -u2 "$branch $skill model must be $expected (got $actual)"
+    exit 1
+  }
+}
+
+for skill in commit push; do
+  assert_skill_model codex "$skill" "gpt-5.5-mini"
+  assert_skill_model claude "$skill" "haiku"
+done
+
 print "agent branches: isolated"

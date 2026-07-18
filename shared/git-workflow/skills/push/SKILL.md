@@ -1,6 +1,6 @@
 ---
 name: push
-model: haiku
+model: gpt-5.5-mini
 description: Push local commits to the remote repository.
 disable-model-invocation: false
 ---
