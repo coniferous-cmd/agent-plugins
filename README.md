@@ -21,14 +21,19 @@ metadata compatible with the `codex` CLI.
 Add this branch as a Codex marketplace, then install the plugins you need:
 
 ```bash
-codex plugin marketplace add coniferous-cmd/agent-plugins#codex
+codex plugin marketplace add coniferous-cmd/agent-plugins --ref codex
 codex plugin add git-workflow@coniferous-cmd-plugins
 codex plugin add todo-board@coniferous-cmd-plugins
 ```
 
-For local development, use the absolute path to a checkout of the `codex`
-branch in place of `coniferous-cmd/agent-plugins#codex`. Start a new Codex
-thread after installing or updating a plugin so its skills are loaded.
+For local development, add a checkout of the `codex` branch with:
+
+```bash
+codex plugin marketplace add /absolute/path/to/agent-plugins
+```
+
+Start a new Codex thread after installing or updating a plugin so its skills
+are loaded.
 
 ## Adding a plugin
 
