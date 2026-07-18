@@ -39,8 +39,8 @@ codex_readme="$(git -C "$repo_root" show codex:README.md)"
 claude_readme="$(git -C "$repo_root" show claude:README.md)"
 
 [[ "$codex_readme" == *"Codex plugins"* ]]
-[[ "$codex_readme" != *"Claude Code plugins"* ]]
+[[ "$codex_readme" != *"Claude"* ]]
 [[ "$claude_readme" == *"Claude Code plugins"* ]]
-[[ "$claude_readme" != *"Codex plugins"* ]]
+[[ "$claude_readme" != *"Codex"* ]]
 
 print "agent branches: isolated"
