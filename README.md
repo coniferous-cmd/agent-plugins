@@ -1,8 +1,8 @@
-# Git Commit Plugin
+# Git Workflow Plugin
 
-A Claude Code plugin for creating clear, consistent Git commit messages and safely pushing local commits.
+A plugin for creating clear, consistent Git commit messages and safely pushing local commits. Compatible with both **Claude Code** and **OpenAI Codex CLI**.
 
-## Skills
+## Features
 
 - `commit`: Generate or review commit messages using the seven commonly recommended rules:
   - Use a concise subject line
@@ -16,7 +16,9 @@ A Claude Code plugin for creating clear, consistent Git commit messages and safe
 
 ## Installation
 
-### From the Claude plugin marketplace
+### Claude Code
+
+#### From the Claude plugin marketplace
 
 1. In Claude Code, add the GitHub-hosted marketplace:
 
@@ -36,12 +38,12 @@ A Claude Code plugin for creating clear, consistent Git commit messages and safe
 /reload-plugins
 ```
 
-### From a local directory
+#### From a local directory
 
 Load the plugin for a session:
 
 ```bash
-claude --plugin-dir /path/to/git-commit-skill
+claude --plugin-dir /path/to/agent-plugins/plugins/git-workflow
 ```
 
 The skills are then available as:
@@ -50,6 +52,20 @@ The skills are then available as:
 /git-workflow:commit
 /git-workflow:push
 ```
+
+This repository can provide multiple Claude Code plugins. Add each plugin under
+`plugins/<plugin-name>/` with its own `.claude-plugin/plugin.json`, then list it
+in `.claude-plugin/marketplace.json`.
+
+### OpenAI Codex CLI
+
+Copy or symlink `.codex-plugin/AGENTS.md` to your project root:
+
+```bash
+cp /path/to/agent-plugins/.codex-plugin/AGENTS.md ./AGENTS.md
+```
+
+Or reference it directly by setting the `CODEX_AGENTS_FILE` environment variable.
 
 ## License
 
