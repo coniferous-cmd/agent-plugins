@@ -21,6 +21,7 @@ readme="$repo_root/README.md"
 [[ ! -f "$repo_root/.claude-plugin/plugin.json" ]]
 [[ "$(sed -n '1p' "$readme")" == "# Agent Plugins" ]]
 rg -q "collection of Claude Code plugins" "$readme"
+rg -q 'Retrieve and remove the next task' "$readme"
 ! rg -q "^# Git Workflow Plugin$" "$readme"
 
 jq -e '.plugins | type == "array" and length == 2' "$marketplace" >/dev/null

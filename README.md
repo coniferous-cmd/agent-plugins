@@ -18,7 +18,7 @@ Manages queued implementation work for a project:
 
 - `push`: Save a finalized implementation task.
 - `list`: View incomplete tasks.
-- `next`: Retrieve and complete the next task.
+- `next`: Retrieve and remove the next task.
 
 ## Installation
 
