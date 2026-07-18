@@ -1,6 +1,6 @@
 # Agent Plugins — Claude Code
 
-A Claude Code-only plugin marketplace. This branch contains only plugins and
+A marketplace of Claude Code plugins. This branch contains only plugins and
 metadata compatible with the `claude` CLI.
 
 ## Available plugins
