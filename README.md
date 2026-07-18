@@ -20,9 +20,9 @@ codex plugin add todo-board@coniferous-cmd-plugins
 ## Install Claude Code plugins
 
 ```bash
-claude plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git#main
-claude plugin install git-workflow@coniferous-cmd-plugins
-claude plugin install todo-board@coniferous-cmd-plugins
+/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git
+/plugin install git-workflow@coniferous-cmd-plugins
+/plugin install todo-board@coniferous-cmd-plugins
 ```
 
 Start a new agent session after installing or updating a plugin.

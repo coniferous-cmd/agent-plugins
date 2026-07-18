@@ -16,6 +16,12 @@ done
 
 [[ -f "$repo_root/.agents/plugins/marketplace.json" ]]
 [[ -f "$repo_root/.claude-plugin/marketplace.json" ]]
+rg -Fq '/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git' "$repo_root/README.md"
+rg -Fq '/plugin install git-workflow@coniferous-cmd-plugins' "$repo_root/README.md"
+if rg -Fq 'agent-plugins.git#main' "$repo_root/README.md"; then
+  print -u2 'README must not pin Claude installation to #main'
+  exit 1
+fi
 
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/skills/commit/SKILL.md" | head -n 1)" == 'gpt-5.5-mini' ]]
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/claude/skills/commit/SKILL.md" | head -n 1)" == 'haiku' ]]
