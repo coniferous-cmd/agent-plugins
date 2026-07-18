@@ -34,9 +34,3 @@ Perform only the requested operation. Respect repository instructions, shell wra
  - Todo list: `scripts/list <project-name>`.
  - Push a task: `scripts/push <project-name> <task> -d <description>`.
  - Retrieve and remove the next task: `scripts/next <project-name>`.
-
-The CLI is implemented in Python and must be run with the `agents` Mamba
-environment. `push` associates a task with the canonical current directory;
-`next` prints and removes the highest-priority incomplete task for that
-project. All projects use the same database, while project paths keep their
-task queues separate.

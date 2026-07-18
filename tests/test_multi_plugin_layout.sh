@@ -54,6 +54,12 @@ for plugin in git-workflow todo-board; do
   }
 done
 
+if rg -Fq 'The CLI is implemented in Python and must be run with the `agents` Mamba' \
+  "$repo_root/plugins/todo-board/skills/todo-board/SKILL.md"; then
+  print -u2 'todo-board must not prescribe the Python/Mamba implementation details'
+  exit 1
+fi
+
 codex_readme="$(git -C "$repo_root" show codex:README.md)"
 claude_readme="$(git -C "$repo_root" show claude:README.md)"
 
