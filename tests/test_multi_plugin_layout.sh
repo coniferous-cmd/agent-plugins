@@ -16,10 +16,16 @@ done
 
 [[ -f "$repo_root/.agents/plugins/marketplace.json" ]]
 [[ -f "$repo_root/.claude-plugin/marketplace.json" ]]
-rg -Fq '/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git' "$repo_root/README.md"
-rg -Fq '/plugin install git-workflow@coniferous-cmd-plugins' "$repo_root/README.md"
-if rg -Fq 'agent-plugins.git#main' "$repo_root/README.md"; then
-  print -u2 'README must not pin Claude installation to #main'
+rg -Fq 'Codex or Claude Code' "$repo_root/README.md" || {
+  print -u2 'README must document one shared Codex and Claude Code flow'
+  exit 1
+}
+rg -Fq '/plugins' "$repo_root/README.md" || {
+  print -u2 'README must document the /plugins entry point'
+  exit 1
+}
+if rg -Fq 'github.com' "$repo_root/README.md"; then
+  print -u2 'README must not include a GitHub domain'
   exit 1
 fi
 

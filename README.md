@@ -9,21 +9,10 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 - `git-workflow`: create clear commit messages and push branches safely.
 - `todo-board`: save, list, and retrieve queued implementation work.
 
-## Install Codex plugins
+## Install plugins
 
-```bash
-codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main
-codex plugin add git-workflow@coniferous-cmd-plugins
-codex plugin add todo-board@coniferous-cmd-plugins
-```
-
-## Install Claude Code plugins
-
-```bash
-/plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git
-/plugin install git-workflow@coniferous-cmd-plugins
-/plugin install todo-board@coniferous-cmd-plugins
-```
+In Codex or Claude Code, enter `/plugins`, find the plugin you want, and
+select **Install plugin**.
 
 Start a new agent session after installing or updating a plugin.
 
