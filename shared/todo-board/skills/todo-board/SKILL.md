@@ -1,6 +1,6 @@
 ---
 name: todo-board
-description: Manage queued implementation work with the bundled todo board. Use when Codex is asked to retrieve and execute the next queued todo, continue queued work, or save a finalized implementation plan to the todo queue.
+description: Manage queued implementation work with the bundled todo board. Use when Claude is asked to retrieve and execute the next queued todo, continue queued work, or save a finalized implementation plan to the todo queue.
 ---
 
 # Todo Board
