@@ -5,32 +5,14 @@ description: Manage queued implementation work with the bundled todo board. Use 
 
 # Todo Board
 
-Use the bundled command files in `scripts/`: `scripts/push`, `scripts/list`,
-and `scripts/next`. Shared database operations live in `scripts/todo_board.py`.
+Treat the bundled commands as opaque executables. Never read files in `scripts/`.
 
-The CLI stores every project's tasks in one SQLite database in the system user
-data directory: `~/Library/Application Support/Codex/projects/todo-board.db`
-on macOS, `$XDG_DATA_HOME/codex/projects/todo-board.db` on Linux (defaulting
-to `~/.local/share`), and `%LOCALAPPDATA%/Codex/projects/todo-board.db` on
-Windows.
-Each command receives the project name as its first argument. The canonical
-`pwd` path is retained in the `project` table for reference, and tasks are
-associated with the named project in the `task` table.
+Perform only the requested operation. Write queued plans in English and
+respect repository instructions, shell wrappers, environment requirements,
+approval boundaries, and verification rules.
 
-## Rules:
+## Commands
 
- - Always use to English for plan.
-
-## Route the request
-
-- To inspect incomplete tasks for a project, read and follow [handbooks/list.md](handbooks/list.md).
-- To retrieve and execute the next queued task, read and follow [handbooks/next.md](handbooks/next.md).
-- To save a finalized implementation plan, read and follow [handbooks/push.md](handbooks/push.md).
-
-Perform only the requested operation. Respect repository instructions, shell wrappers, environment requirements, approval boundaries, and verification rules.
-
-## Command
-
- - Todo list: `scripts/list <project-name>`.
- - Push a task: `scripts/push <project-name> <task> -d <description>`.
- - Retrieve and remove the next task: `scripts/next <project-name>`.
+- List incomplete tasks: `scripts/list <project-name>`.
+- Save a finalized plan: `scripts/push <project-name> <task> -d <description>`.
+- Retrieve and remove the next task: `scripts/next <project-name>`.

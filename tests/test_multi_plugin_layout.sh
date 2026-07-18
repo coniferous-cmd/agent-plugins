@@ -60,6 +60,12 @@ if rg -Fq 'The CLI is implemented in Python and must be run with the `agents` Ma
   exit 1
 fi
 
+if ! rg -Fq 'Never read files in `scripts/`.' \
+  "$repo_root/plugins/todo-board/skills/todo-board/SKILL.md"; then
+  print -u2 'todo-board must prohibit reading bundled script sources'
+  exit 1
+fi
+
 codex_readme="$(git -C "$repo_root" show codex:README.md)"
 claude_readme="$(git -C "$repo_root" show claude:README.md)"
 
