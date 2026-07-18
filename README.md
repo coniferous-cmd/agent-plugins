@@ -1,32 +1,28 @@
-# Git Workflow Plugin
+# Agent Plugins
 
-A plugin for creating clear, consistent Git commit messages and safely pushing local commits. Compatible with both **Claude Code** and **OpenAI Codex CLI**.
+A collection of Claude Code plugins distributed through a shared marketplace.
+Each plugin is independently installable and lives under `plugins/<plugin-name>/`.
 
-## Features
+## Available plugins
 
-- `commit`: Generate or review commit messages using the seven commonly recommended rules:
-  - Use a concise subject line
-  - Keep the subject within 50 characters when practical
-  - Capitalize the subject
-  - Do not end the subject with a period
-  - Use the imperative mood
-  - Wrap the body at 72 characters
-  - Explain what changed and why, not how
-- `push`: Push the current branch to its tracked remote safely. It only pushes when explicitly requested and never force-pushes by default.
+### `git-workflow`
+
+Provides two Git workflow skills:
+
+- `commit`: Create or review clear, consistent Git commit messages.
+- `push`: Push the current branch safely without force-pushing by default.
 
 ## Installation
 
-### Claude Code
+### From the Claude plugin marketplace
 
-#### From the Claude plugin marketplace
-
-1. In Claude Code, add the GitHub-hosted marketplace:
+1. Add the GitHub-hosted marketplace:
 
 ```text
 /plugin marketplace add coniferous-cmd/agent-plugins
 ```
 
-2. Install the plugin:
+2. Install the plugin you need:
 
 ```text
 /plugin install git-workflow@coniferous-cmd-plugins
@@ -38,34 +34,49 @@ A plugin for creating clear, consistent Git commit messages and safely pushing l
 /reload-plugins
 ```
 
-#### From a local directory
+### From a local directory
 
-Load the plugin for a session:
+Load an individual plugin for a session:
 
 ```bash
 claude --plugin-dir /path/to/agent-plugins/plugins/git-workflow
 ```
 
-The skills are then available as:
+Its skills are then available as:
 
 ```text
 /git-workflow:commit
 /git-workflow:push
 ```
 
-This repository can provide multiple Claude Code plugins. Add each plugin under
-`plugins/<plugin-name>/` with its own `.claude-plugin/plugin.json`, then list it
-in `.claude-plugin/marketplace.json`.
+## Adding a plugin
 
-### OpenAI Codex CLI
+Create a plugin directory with its own manifest and skills:
 
-Copy or symlink `.codex-plugin/AGENTS.md` to your project root:
-
-```bash
-cp /path/to/agent-plugins/.codex-plugin/AGENTS.md ./AGENTS.md
+```text
+plugins/
+└── <plugin-name>/
+    ├── .claude-plugin/
+    │   └── plugin.json
+    └── skills/
 ```
 
-Or reference it directly by setting the `CODEX_AGENTS_FILE` environment variable.
+Add the plugin to `.claude-plugin/marketplace.json`:
+
+```json
+{
+  "name": "coniferous-cmd-plugins",
+  "plugins": [
+    {
+      "name": "<plugin-name>",
+      "source": "./plugins/<plugin-name>"
+    }
+  ]
+}
+```
+
+The `plugin.json` file describes one plugin and remains a JSON object. The
+marketplace's `plugins` field is the array that lists all installable plugins.
 
 ## License
 
