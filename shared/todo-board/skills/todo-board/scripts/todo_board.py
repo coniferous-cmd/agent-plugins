@@ -18,15 +18,15 @@ def project_name(directory=None):
 
 def database_path(directory=None, data_dir=None):
     if data_dir is None:
-        override = os.environ.get("CLAUDE_DATA_DIR")
+        override = os.environ.get("CODEX_DATA_DIR")
         if override:
             root = Path(override).expanduser()
         elif sys.platform == "darwin":
-            root = Path.home() / "Library" / "Application Support" / "Claude"
+            root = Path.home() / "Library" / "Application Support" / "Codex"
         elif os.name == "nt":
-            root = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "Claude"
+            root = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "Codex"
         else:
-            root = Path(os.environ.get("XDG_DATA_HOME", "~/.local/share")).expanduser() / "claude"
+            root = Path(os.environ.get("XDG_DATA_HOME", "~/.local/share")).expanduser() / "codex"
     else:
         root = Path(data_dir).expanduser()
     projects = root / "projects"

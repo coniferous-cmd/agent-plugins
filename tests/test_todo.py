@@ -21,7 +21,7 @@ def load_todo_module():
 
 def run_tool(*args, cwd, data_dir):
     env = os.environ.copy()
-    env["CLAUDE_DATA_DIR"] = str(data_dir)
+    env["CODEX_DATA_DIR"] = str(data_dir)
     command = SCRIPTS / args[0]
     return subprocess.run(
         [sys.executable, str(command), *args[1:]],
@@ -41,7 +41,7 @@ def test_all_projects_share_one_database_under_system_data_directory(tmp_path):
     project_b = tmp_path / "opened-project-b"
     project_a.mkdir()
     project_b.mkdir()
-    data_dir = tmp_path / "system-data" / "Claude"
+    data_dir = tmp_path / "system-data" / "Codex"
 
     path_a = module.database_path(project_a, data_dir)
     path_b = module.database_path(project_b, data_dir)
@@ -55,7 +55,7 @@ def test_all_projects_share_one_database_under_system_data_directory(tmp_path):
 def test_push_writes_current_project_database_and_next_removes_task(tmp_path):
     project = tmp_path / "opened-project"
     project.mkdir()
-    data_dir = tmp_path / "system-data" / "Claude"
+    data_dir = tmp_path / "system-data" / "Codex"
 
     pushed = run_tool(
         "push",
@@ -107,7 +107,7 @@ def test_next_does_not_consume_task_from_another_opened_project(tmp_path):
     project_b = tmp_path / "project-b"
     project_a.mkdir()
     project_b.mkdir()
-    data_dir = tmp_path / "system-data" / "Claude"
+    data_dir = tmp_path / "system-data" / "Codex"
 
     run_tool("push", "project-a", "Task A", cwd=project_a, data_dir=data_dir)
     run_tool("push", "project-b", "Task B", cwd=project_b, data_dir=data_dir)

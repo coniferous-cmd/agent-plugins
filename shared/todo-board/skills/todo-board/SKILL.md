@@ -9,9 +9,9 @@ Use the bundled command files in `scripts/`: `scripts/push`, `scripts/list`,
 and `scripts/next`. Shared database operations live in `scripts/todo_board.py`.
 
 The CLI stores every project's tasks in one SQLite database in the system user
-data directory: `~/Library/Application Support/Claude/projects/todo-board.db`
-on macOS, `$XDG_DATA_HOME/claude/projects/todo-board.db` on Linux (defaulting
-to `~/.local/share`), and `%LOCALAPPDATA%/Claude/projects/todo-board.db` on
+data directory: `~/Library/Application Support/Codex/projects/todo-board.db`
+on macOS, `$XDG_DATA_HOME/codex/projects/todo-board.db` on Linux (defaulting
+to `~/.local/share`), and `%LOCALAPPDATA%/Codex/projects/todo-board.db` on
 Windows.
 Each command receives the project name as its first argument. The canonical
 `pwd` path is retained in the `project` table for reference, and tasks are
