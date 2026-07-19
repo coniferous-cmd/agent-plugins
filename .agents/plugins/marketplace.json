@@ -5,10 +5,22 @@
   },
   "plugins": [
     {
-      "name": "git-workflow",
+      "name": "git",
       "source": {
         "source": "local",
-        "path": "./plugins/git-workflow"
+        "path": "./plugins/git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "local",
+        "path": "./plugins/superpowers"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -51,6 +63,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "coding",
+      "source": {
+        "source": "local",
+        "path": "./plugins/coding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
     }
   ]
 }

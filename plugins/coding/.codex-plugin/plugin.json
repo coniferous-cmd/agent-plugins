@@ -1,0 +1,48 @@
+{
+  "name": "coding",
+  "displayName": "Development Agents",
+  "version": "2.0.0",
+  "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
+  "author": {
+    "name": "Xiangkunxu"
+  },
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "multi-agent",
+    "development",
+    "vue2",
+    "java",
+    "testing",
+    "code-review"
+  ],
+  "skills": "./codex/skills/",
+  "agents": [
+    "./codex/agents/analyst.md",
+    "./codex/agents/architect.md",
+    "./codex/agents/bug-investigator.md",
+    "./codex/agents/coder.md",
+    "./codex/agents/documenter.md",
+    "./codex/agents/reviewer.md",
+    "./codex/agents/subagent-orchestrator.md",
+    "./codex/agents/task-orchestrator.md",
+    "./codex/agents/test-generator.md"
+  ],
+  "interface": {
+    "displayName": "Development Agents",
+    "shortDescription": "Multi-agent software development workflows for Codex.",
+    "longDescription": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
+    "developerName": "Xiangkunxu",
+    "category": "Development",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Analyze this codebase before I make changes.",
+      "Design the architecture for a new feature.",
+      "Investigate this bug and find the root cause.",
+      "Implement this work package end-to-end.",
+      "Review my pending changes.",
+      "Generate a test matrix for this change.",
+      "Update documentation to reflect recent changes."
+    ]
+  }
+}
