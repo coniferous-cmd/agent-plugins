@@ -1,33 +1,20 @@
 ---
 name: push
 model: gpt-5.5-mini
-description: Push local commits to the remote repository.
+description: Safely push the current branch when requested.
 allowed-tools: [Bash]
 disable-model-invocation: false
 ---
 # Git Push
 
-## Goal
-
-Push local commits to the appropriate remote branch safely.
-
-## Workflow
-
-1. Check the current branch with `git rev-parse --abbrev-ref HEAD`.
-2. Inspect its push status with `git status -sb` and `git cherry -v @{u}` (if an upstream exists).
-3. If the branch is ready, push it to the tracked remote.
-4. If no upstream exists, push with `--set-upstream`.
-5. Push only when the user explicitly requests it.
+1. Check the current branch, its status, and its relationship to the upstream when one exists.
+2. Push the tracked branch, or use `--set-upstream` if needed.
+3. Push only when the user explicitly requests it.
 
 ## Rules
 
 - Never use `--force` unless explicitly requested.
 - Never push a different branch unless explicitly requested.
-- Stop and report any errors.
-- Keep replies brief.
+- Report errors briefly.
 
-## Output
-
-```sh
-Pushed <branch> to <remote>
-```
+`Pushed <branch> to <remote>`
