@@ -42,6 +42,16 @@
         "name": "coniferous-cmd"
       },
       "category": "productivity"
+    },
+    {
+      "name": "coding",
+      "source": "./plugins/coding",
+      "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Xiangkunxu"
+      },
+      "category": "development"
     }
   ]
 }

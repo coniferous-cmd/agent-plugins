@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "coding",
+  "displayName": "Development Agents",
+  "version": "2.0.0",
+  "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
+  "author": {
+    "name": "Xiangkunxu"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "multi-agent",
+    "development",
+    "vue2",
+    "java",
+    "testing",
+    "code-review"
+  ],
+  "agents": [
+    "./claude/agents/analyst.md",
+    "./claude/agents/architect.md",
+    "./claude/agents/bug-investigator.md",
+    "./claude/agents/coder.md",
+    "./claude/agents/documenter.md",
+    "./claude/agents/reviewer.md",
+    "./claude/agents/subagent-orchestrator.md",
+    "./claude/agents/task-orchestrator.md",
+    "./claude/agents/test-generator.md"
+  ],
+  "skills": [
+    "./claude/skills/api-design",
+    "./claude/skills/bug-fix",
+    "./claude/skills/code-review",
+    "./claude/skills/feature-development",
+    "./claude/skills/java-development",
+    "./claude/skills/unit-testing",
+    "./claude/skills/vue2-refactor"
+  ],
+  "commands": [
+    "./claude/commands/analyze.md",
+    "./claude/commands/feature.md",
+    "./claude/commands/fix.md",
+    "./claude/commands/refactor.md",
+    "./claude/commands/review.md",
+    "./claude/commands/test.md"
+  ]
+}
