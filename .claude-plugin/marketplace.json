@@ -6,10 +6,10 @@
   },
   "plugins": [
     {
-      "name": "git-workflow",
-      "source": "./plugins/git-workflow",
+      "name": "git",
+      "source": "./plugins/git",
       "description": "Claude Code skills for writing clear Git commit messages and safely pushing commits.",
-      "version": "0.0.3",
+      "version": "0.0.5",
       "category": "productivity"
     },
     {
