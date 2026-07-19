@@ -65,10 +65,10 @@
       "category": "Productivity"
     },
     {
-      "name": "coding",
+      "name": "dev",
       "source": {
         "source": "local",
-        "path": "./plugins/coding"
+        "path": "./plugins/dev"
       },
       "policy": {
         "installation": "AVAILABLE",

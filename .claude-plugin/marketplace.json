@@ -44,8 +44,8 @@
       "category": "productivity"
     },
     {
-      "name": "coding",
-      "source": "./plugins/coding",
+      "name": "dev",
+      "source": "./plugins/dev",
       "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
       "version": "2.0.0",
       "author": {
