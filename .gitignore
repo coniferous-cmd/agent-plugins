@@ -4,6 +4,7 @@ node_modules/
 npm-debug.log*
 .env
 .env.local
+.idea
 
 # AI assistants
 .claude/
@@ -23,8 +24,6 @@ npm-debug.log*
 .copilot/
 .copilotrc
 .sourcegraph/
-CLAUDE.md
-AGENTS.md
 .github/copilot-instructions.md
 
 # Python
