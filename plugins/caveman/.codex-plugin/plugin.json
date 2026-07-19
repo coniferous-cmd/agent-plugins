@@ -16,6 +16,11 @@
     "writing"
   ],
   "skills": "./codex/skills/",
+  "agents": [
+    "./codex/agents/cavecrew-builder.md",
+    "./codex/agents/cavecrew-investigator.md",
+    "./codex/agents/cavecrew-reviewer.md"
+  ],
   "interface": {
     "displayName": "Caveman",
     "shortDescription": "Talk like caveman. Cut filler. Keep technical accuracy.",

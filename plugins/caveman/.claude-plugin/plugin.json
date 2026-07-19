@@ -6,5 +6,10 @@
     "name": "Julius Brussee",
     "url": "https://github.com/JuliusBrussee"
   },
-  "skills": "./claude/skills/"
+  "skills": "./claude/skills/",
+  "agents": [
+    "./claude/agents/cavecrew-builder.md",
+    "./claude/agents/cavecrew-investigator.md",
+    "./claude/agents/cavecrew-reviewer.md"
+  ]
 }
