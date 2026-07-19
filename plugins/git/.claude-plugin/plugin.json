@@ -1,5 +1,5 @@
 {
-  "name": "git",
+  "name": "git-workflow",
   "description": "Claude agents for writing clear Git commit messages and safely pushing commits.",
   "version": "0.0.5",
   "author": {

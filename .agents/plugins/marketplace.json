@@ -5,7 +5,7 @@
   },
   "plugins": [
     {
-      "name": "git",
+      "name": "git-workflow",
       "source": {
         "source": "local",
         "path": "./plugins/git"

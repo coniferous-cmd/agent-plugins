@@ -4,8 +4,15 @@ model: gpt-5.5-mini
 description: Write, review, or create clear Git commits from staged changes.
 allowed-tools: [Bash, Read, Grep]
 disable-model-invocation: false
+parameters:
+  - name: unstaged
+    type: boolean
+    description: Stage and commit all modified files (git commit -a)
+    default: false
 ---
 # Git Commit
+
+Commit target: $UNSTAGED (use git commit -a if true)
 
 Write or create a focused commit safely.
 

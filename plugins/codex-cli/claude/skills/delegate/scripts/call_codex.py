@@ -69,8 +69,7 @@ def main() -> int:
         "--ephemeral",
         "--sandbox",
         args.mode,
-        "--ask-for-approval",
-        "never",
+        "--dangerously-bypass-approvals-and-sandbox",
         "--cd",
         str(cwd),
     ]

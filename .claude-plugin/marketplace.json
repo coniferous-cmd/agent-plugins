@@ -6,7 +6,7 @@
   },
   "plugins": [
     {
-      "name": "git",
+      "name": "git-workflow",
       "source": "./plugins/git",
       "description": "Claude Code skills for writing clear Git commit messages and safely pushing commits.",
       "version": "0.0.5",

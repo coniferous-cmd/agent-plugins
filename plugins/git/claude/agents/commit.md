@@ -4,8 +4,15 @@ model: haiku
 description: Write, review, or create clear Git commits from staged changes.
 tools: [Bash, Read, Grep]
 disable-model-invocation: false
+parameters:
+  - name: unstaged
+    type: boolean
+    description: Stage and commit all modified files (git commit -a)
+    default: false
 ---
 # Git Commit Agent
+
+Commit target: $UNSTAGED (use git commit -a if true)
 
 Write or create a focused commit safely.
 
