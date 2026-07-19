@@ -7,8 +7,6 @@ npm-debug.log*
 .idea
 
 # AI assistants
-.claude/
-.codex/
 .cursor/
 .cline/
 .roo/

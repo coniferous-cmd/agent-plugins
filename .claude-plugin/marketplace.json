@@ -52,6 +52,16 @@
         "name": "Xiangkunxu"
       },
       "category": "development"
+    },
+    {
+      "name": "codex-cli",
+      "source": "./plugins/codex-cli",
+      "description": "Delegate coding tasks to OpenAI Codex CLI for independent second-opinion reviews and well-scoped implementations.",
+      "author": {
+        "name": "Xiangkunxu"  
+      },
+      "version": "0.1.0",
+      "category": "development"
     }
   ]
 }
