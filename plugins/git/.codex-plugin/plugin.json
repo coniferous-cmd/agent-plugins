@@ -1,11 +1,14 @@
 {
-  "name": "git-workflow",
-  "description": "Codex skills for writing clear Git commit messages and safely pushing commits.",
-  "version": "0.0.2",
+  "name": "git",
+  "description": "Codex agents for writing clear Git commit messages and safely pushing commits.",
+  "version": "0.0.3",
   "author": {
     "name": "coniferous-cmd"
   },
-  "skills": "./codex/skills/",
+  "agents": [
+    "./codex/agents/commit.md",
+    "./codex/agents/push.md"
+  ],
   "interface": {
     "displayName": "Git Workflow",
     "shortDescription": "Write commits and push branches safely.",

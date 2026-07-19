@@ -1,19 +1,18 @@
 ---
 name: push
-model: gpt-5.5-mini
+model: haiku
 description: Push local commits to the remote repository.
+tools: [Bash]
 disable-model-invocation: false
 ---
-# Git Push
-
-## Goal
+# Git Push Agent
 
 Push local commits to the appropriate remote branch safely.
 
 ## Workflow
 
-1. Always start a dedicated sub-agent.
-2. Check the current branch and its push status.
+1. Check the current branch with `git rev-parse --abbrev-ref HEAD`.
+2. Inspect its push status with `git status -sb` and `git cherry -v @{u}` (if an upstream exists).
 3. If the branch is ready, push it to the tracked remote.
 4. If no upstream exists, push with `--set-upstream`.
 5. Push only when the user explicitly requests it.
@@ -27,6 +26,6 @@ Push local commits to the appropriate remote branch safely.
 
 ## Output
 
-```sh
+```
 Pushed <branch> to <remote>
 ```

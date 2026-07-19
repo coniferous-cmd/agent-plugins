@@ -1,9 +1,0 @@
-{
-  "name": "git-workflow",
-  "description": "Claude skills for writing clear Git commit messages and safely pushing commits.",
-  "version": "0.0.3",
-  "author": {
-    "name": "coniferous-cmd"
-  },
-  "skills": "./claude/skills/"
-}
