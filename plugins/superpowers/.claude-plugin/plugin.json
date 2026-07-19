@@ -1,0 +1,9 @@
+{
+  "name": "superpowers",
+  "description": "Core skills library for coding agents: TDD, debugging, collaboration patterns, and proven techniques.",
+  "version": "0.0.1",
+  "author": {
+    "name": "Jesse Vincent"
+  },
+  "skills": "./claude/skills/"
+}
