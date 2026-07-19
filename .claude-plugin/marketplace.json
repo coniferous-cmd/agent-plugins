@@ -18,6 +18,13 @@
       "description": "Claude Code skill for saving, listing, and completing queued implementation work.",
       "version": "0.1.0",
       "category": "productivity"
+    },
+    {
+      "name": "superpowers",
+      "source": "./plugins/superpowers",
+      "description": "Core skills library for coding agents: TDD, debugging, collaboration patterns, and proven techniques.",
+      "version": "0.0.1",
+      "category": "productivity"
     }
   ]
 }
