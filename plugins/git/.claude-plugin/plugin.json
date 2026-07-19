@@ -1,7 +1,7 @@
 {
   "name": "git",
   "description": "Claude agents for writing clear Git commit messages and safely pushing commits.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "coniferous-cmd"
   },
