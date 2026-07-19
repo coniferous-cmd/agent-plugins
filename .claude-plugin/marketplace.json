@@ -25,6 +25,23 @@
       "description": "Core skills library for coding agents: TDD, debugging, collaboration patterns, and proven techniques.",
       "version": "0.0.1",
       "category": "productivity"
+    },
+    {
+      "name": "caveman",
+      "source": "./plugins/caveman",
+      "description": "Ultra-compressed communication mode. Cuts 65% output tokens (measured) while keeping full technical accuracy.",
+      "version": "0.1.0",
+      "category": "productivity"
+    },
+    {
+      "name": "absorb",
+      "source": "./plugins/absorb",
+      "description": "Absorb a plugin or single skill from a GitHub repository or local directory into the marketplace.",
+      "version": "0.1.0",
+      "author": {
+        "name": "coniferous-cmd"
+      },
+      "category": "productivity"
     }
   ]
 }

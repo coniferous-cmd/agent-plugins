@@ -1,0 +1,22 @@
+{
+  "name": "absorb",
+  "description": "Absorb a plugin or single skill from a GitHub repository or local directory into the marketplace.",
+  "version": "0.1.0",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "skills": "./codex/skills/",
+  "interface": {
+    "displayName": "Absorb",
+    "shortDescription": "Absorb plugins from GitHub or local directories.",
+    "longDescription": "Absorbs a plugin or single skill from a GitHub repository or local directory into the marketplace.",
+    "developerName": "coniferous-cmd",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Absorb a plugin from https://github.com/owner/repo",
+      "Absorb a local plugin from /path/to/plugin",
+      "Absorb a single skill from /path/to/repo --skill skills/my-skill"
+    ]
+  }
+}
