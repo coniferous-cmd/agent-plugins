@@ -62,6 +62,13 @@
       },
       "version": "0.1.0",
       "category": "development"
+    },
+    {
+      "name": "obsidian",
+      "source": "./plugins/obsidian",
+      "description": "Create and edit Obsidian vault files including Markdown, Bases, and Canvas. Use when working with .md, .base, or .canvas files in an Obsidian vault.",
+      "version": "1.0.1",
+      "category": "productivity"
     }
   ]
 }
