@@ -20,30 +20,6 @@
       "category": "productivity"
     },
     {
-      "name": "superpowers",
-      "source": "./plugins/superpowers",
-      "description": "Core skills library for coding agents: TDD, debugging, collaboration patterns, and proven techniques.",
-      "version": "0.0.1",
-      "category": "productivity"
-    },
-    {
-      "name": "caveman",
-      "source": "./plugins/caveman",
-      "description": "Ultra-compressed communication mode. Cuts 65% output tokens (measured) while keeping full technical accuracy.",
-      "version": "0.1.0",
-      "category": "productivity"
-    },
-    {
-      "name": "absorb",
-      "source": "./plugins/absorb",
-      "description": "Absorb a plugin or single skill from a GitHub repository or local directory into the marketplace.",
-      "version": "0.1.0",
-      "author": {
-        "name": "coniferous-cmd"
-      },
-      "category": "productivity"
-    },
-    {
       "name": "dev",
       "source": "./plugins/dev",
       "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
@@ -51,16 +27,6 @@
       "author": {
         "name": "Xiangkunxu"
       },
-      "category": "development"
-    },
-    {
-      "name": "codex-cli",
-      "source": "./plugins/codex-cli",
-      "description": "Delegate coding tasks to OpenAI Codex CLI for independent second-opinion reviews and well-scoped implementations.",
-      "author": {
-        "name": "Xiangkunxu"  
-      },
-      "version": "0.1.0",
       "category": "development"
     },
     {

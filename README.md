@@ -7,7 +7,6 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ## Available plugins
 
 - `git-workflow`: create clear commit messages and push branches safely.
-- `superpowers`: TDD, debugging, planning, and collaboration workflows for coding agents. (from [obra/superpowers](https://github.com/obra/superpowers))
 - `kanban`: save, list, and retrieve queued implementation work.
 
 ## Install plugins
@@ -17,7 +16,6 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ```bash
 /plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git
 /plugin install git-workflow@coniferous-cmd-plugins
-/plugin install superpowers@coniferous-cmd-plugins
 /plugin install kanban@coniferous-cmd-plugins
 ```
 
@@ -26,7 +24,6 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ```bash
 codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main
 codex plugin add git-workflow@coniferous-cmd-plugins
-codex plugin add superpowers@coniferous-cmd-plugins
 codex plugin add kanban@coniferous-cmd-plugins
 ```
 

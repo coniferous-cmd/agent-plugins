@@ -1,8 +1,0 @@
-{
-  "name": "codex-cli",
-  "version": "0.1.0",
-  "description": "Delegate coding tasks to OpenAI Codex CLI for independent second-opinion reviews and well-scoped implementations.",
-  "skills": [
-    "./claude/skills/"
-  ]
-}
