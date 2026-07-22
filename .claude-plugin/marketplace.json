@@ -13,8 +13,8 @@
       "category": "productivity"
     },
     {
-      "name": "todo-board",
-      "source": "./plugins/todo-board",
+      "name": "kanban",
+      "source": "./plugins/kanban",
       "description": "Claude Code skill for saving, listing, and completing queued implementation work.",
       "version": "0.1.0",
       "category": "productivity"

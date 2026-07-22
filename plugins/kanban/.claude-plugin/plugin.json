@@ -1,9 +1,9 @@
 {
-  "name": "todo-board",
+  "name": "kanban",
   "description": "Claude skill for saving, listing, and completing queued implementation work.",
   "version": "0.1.0",
   "author": {
     "name": "coniferous-cmd"
   },
-  "skills": "./claude/skills/"
+  "skills": "./codex/skills/"
 }

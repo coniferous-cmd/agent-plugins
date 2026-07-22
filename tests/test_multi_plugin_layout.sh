@@ -29,13 +29,6 @@ rg -F '/plugin install todo-board@coniferous-cmd-plugins' "$readme"
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/skills/commit/SKILL.md" | head -n 1)" == 'gpt-5.5-mini' ]]
 [[ "$(sed -n 's/^model: //p' "$repo_root/plugins/git-workflow/claude/skills/commit/SKILL.md" | head -n 1)" == 'haiku' ]]
 
-for link_path in \
-  "$repo_root/plugins/todo-board/claude/skills/todo-board/scripts" \
-  "$repo_root/plugins/todo-board/claude/skills/todo-board/handbooks"; do
-  [[ -L "$link_path" && -e "$link_path" ]] || {
-    print -u2 "Missing shared link: $link_path"
-    exit 1
-  }
-done
+[[ "$(jq -r '.skills' "$repo_root/plugins/todo-board/.claude-plugin/plugin.json")" == './codex/skills/' ]]
 
 print 'single-branch dual-platform layout: ok'

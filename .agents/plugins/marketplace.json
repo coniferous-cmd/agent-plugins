@@ -29,10 +29,10 @@
       "category": "Productivity"
     },
     {
-      "name": "todo-board",
+      "name": "kanban",
       "source": {
         "source": "local",
-        "path": "./plugins/todo-board"
+        "path": "./plugins/kanban"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import sqlite3
+import sys
+import time
+from pathlib import Path
+
+
+def database_path():
+    override = os.environ.get("CODEX_DATA_DIR")
+    if override:
+        root = Path(override).expanduser()
+    elif sys.platform == "darwin":
+        root = Path.home() / "Library" / "Application Support" / "Codex"
+    elif os.name == "nt":
+        root = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "Codex"
+    else:
+        root = Path(os.environ.get("XDG_DATA_HOME", "~/.local/share")).expanduser() / "codex"
+    path = root / "projects" / "todo-board.db"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def connect():
+    connection = sqlite3.connect(database_path())
+    connection.execute("PRAGMA foreign_keys = ON")
+    connection.executescript("""
+        CREATE TABLE IF NOT EXISTS project (
+            id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, path TEXT NOT NULL UNIQUE,
+            created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS task (
+            id INTEGER PRIMARY KEY, project_id INTEGER NOT NULL REFERENCES project(id),
+            title TEXT NOT NULL, detail TEXT NOT NULL DEFAULT '', priority INTEGER NOT NULL DEFAULT 0,
+            created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS task_project_id_idx ON task(project_id);
+    """)
+    return connection
+
+
+parser = argparse.ArgumentParser(description="Add a task to a project")
+parser.add_argument("project")
+parser.add_argument("title")
+parser.add_argument("-d", "--detail", default="")
+parser.add_argument("-p", "--priority", type=int, default=0)
+args = parser.parse_args()
+now = int(time.time())
+directory = str(Path.cwd().resolve())
+with connect() as connection:
+    connection.execute(
+        """INSERT INTO project (name, path, created_at, updated_at) VALUES (?, ?, ?, ?)
+           ON CONFLICT(name) DO UPDATE SET path = excluded.path, updated_at = excluded.updated_at""",
+        (args.project, directory, now, now),
+    )
+    project_id = connection.execute(
+        "SELECT id FROM project WHERE name = ?", (args.project,)
+    ).fetchone()[0]
+    connection.execute(
+        """INSERT INTO task (project_id, title, detail, priority, created_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?)""",
+        (project_id, args.title, args.detail, args.priority, now, now),
+    )

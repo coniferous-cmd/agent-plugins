@@ -1,7 +1,7 @@
 {
-  "name": "todo-board",
+  "name": "kanban",
   "description": "Codex skill for saving, listing, and completing queued implementation work.",
-  "version": "0.1.0",
+  "version": "0.1.0+codex.20260722142031",
   "author": {
     "name": "coniferous-cmd"
   },
@@ -12,7 +12,9 @@
     "longDescription": "Save, list, and complete implementation tasks in a project-specific queue.",
     "developerName": "coniferous-cmd",
     "category": "Productivity",
-    "capabilities": ["Write"],
+    "capabilities": [
+      "Write"
+    ],
     "defaultPrompt": [
       "Show the queued tasks for this project.",
       "Save this implementation plan to the todo board.",
