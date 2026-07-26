@@ -1,6 +1,11 @@
 ---
 name: git-commit
 description: Generate Conventional Commit messages from git diff
+parameters:
+  - name: language
+    type: string
+    description: Language for commit message (e.g., en, zh, es, fr)
+    default: en
 ---
 
 # Git Commit Skill
