@@ -1,5 +1,5 @@
 ---
-name: Executor
+name: executor
 description: Executes tasks from a predefined plan and verifies results.
 tools: Read, Grep, Glob
 permissionMode: bypassPermissions

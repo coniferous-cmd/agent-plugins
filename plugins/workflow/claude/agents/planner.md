@@ -1,5 +1,5 @@
 ---
-name: Planner
+name: planner
 description: Converts user goals into structured execution plans.
 tools: Read, Grep, Glob
 permissionMode: readonly
