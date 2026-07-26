@@ -6,7 +6,7 @@
     "name": "coniferous-cmd"
   },
   "commands": [
-    "./claude/commands/commit/SKILL.md",
-    "./claude/commands/push/SKILL.md"
+    "./claude/commands/commit.md",
+    "./claude/commands/push.md"
   ]
 }
