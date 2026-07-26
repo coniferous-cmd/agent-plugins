@@ -27,7 +27,7 @@ Rules:
  - Require an new `sub agent` to execution
 
 Workflow:
- 1. Review git diff
+ 1. Analyze the code changes and their context
  2. Determine the change type
  3. Generate a commit message
  4. Output one recommended commit message
