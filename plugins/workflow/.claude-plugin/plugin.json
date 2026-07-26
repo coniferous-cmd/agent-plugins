@@ -1,0 +1,12 @@
+{
+  "name": "workflow",
+  "description": "Claude agents for converting user goals into structured execution plans and executing tasks step by step.",
+  "version": "0.0.1",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "agents": [
+    "./claude/agents/executor.md",
+    "./claude/agents/planner.md"
+  ]
+}
