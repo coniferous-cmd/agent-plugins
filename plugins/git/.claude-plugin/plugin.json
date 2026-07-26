@@ -5,8 +5,8 @@
   "author": {
     "name": "coniferous-cmd"
   },
-  "commands": [
-    "./claude/commands/commit.md",
-    "./claude/commands/push.md"
+  "skills": [
+    "./claude/skills/commit/SKILL.md",
+    "./claude/skills/push/SKILL.md"
   ]
 }
