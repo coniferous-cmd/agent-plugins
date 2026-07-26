@@ -13,38 +13,11 @@
       "category": "productivity"
     },
     {
-      "name": "kanban",
-      "source": "./plugins/kanban",
-      "description": "Claude Code skill for saving, listing, and completing queued implementation work.",
-      "version": "0.1.0",
-      "category": "productivity"
-    },
-    {
-      "name": "dev",
-      "source": "./plugins/dev",
-      "description": "Multi-agent software development workflows for analysis, task orchestration, implementation, testing, review, Vue 2 refactoring, and Java development.",
-      "version": "2.0.0",
-      "author": {
-        "name": "Xiangkunxu"
-      },
-      "category": "development"
-    },
-    {
       "name": "obsidian",
       "source": "./plugins/obsidian",
       "description": "Create and edit Obsidian vault files including Markdown, Bases, and Canvas. Use when working with .md, .base, or .canvas files in an Obsidian vault.",
       "version": "1.0.1",
       "category": "productivity"
-    },
-    {
-      "name": "guild",
-      "source": "./plugins/guild",
-      "description": "A lightweight personal software delivery workflow with focused tests and risk-based independent review.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Xiangkunxu"
-      },
-      "category": "development"
     }
   ]
 }

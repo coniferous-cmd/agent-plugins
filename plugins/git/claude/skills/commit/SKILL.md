@@ -1,5 +1,5 @@
 ---
-name: git-commit
+name: commit
 description: Generate Conventional Commit messages from git diff
 parameters:
   - name: language
