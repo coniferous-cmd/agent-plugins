@@ -35,6 +35,16 @@
       "description": "Create and edit Obsidian vault files including Markdown, Bases, and Canvas. Use when working with .md, .base, or .canvas files in an Obsidian vault.",
       "version": "1.0.1",
       "category": "productivity"
+    },
+    {
+      "name": "guild",
+      "source": "./plugins/guild",
+      "description": "A lightweight personal software delivery workflow with focused tests and risk-based independent review.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Xiangkunxu"
+      },
+      "category": "development"
     }
   ]
 }
