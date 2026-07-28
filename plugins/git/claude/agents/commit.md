@@ -6,6 +6,7 @@ parameters:
     type: string
     description: Language for commit message (e.g., en, zh, es, fr)
     default: en
+model: haiku
 ---
 
 # Git Commit Skill
@@ -29,7 +30,6 @@ Rules:
  - Keep the first line under 72 characters
  - Avoid vague messages like "update code" or "fix bug"
  - Describe user value or behavior changes
- - Require an new `sub agent` to execution
 
 Workflow:
  1. Analyze the code changes and their context
