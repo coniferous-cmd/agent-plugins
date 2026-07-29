@@ -1,8 +1,0 @@
-{
-  "name": "todo",
-  "version": "1.0.0",
-  "description": "FIFO-based TODO queue management with push/approve/next/finish lifecycle",
-  "skills": [
-    "./claude/skills/todo"
-  ]
-}
