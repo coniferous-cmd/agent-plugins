@@ -1,11 +1,6 @@
 ---
 name: commit
 description: Generate Conventional Commit messages from git diff
-parameters:
-  - name: language
-    type: string
-    description: Language for commit message (e.g., en, zh, es, fr)
-    default: en
 model: haiku
 ---
 
@@ -27,9 +22,10 @@ Types:
 
 Rules:
  - Use imperative mood
+ - Just do your work silently.
+ - Describe user value or behavior changes
  - Keep the first line under 72 characters
  - Avoid vague messages like "update code" or "fix bug"
- - Describe user value or behavior changes
 
 Workflow:
  1. Analyze the code changes and their context

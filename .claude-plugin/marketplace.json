@@ -25,6 +25,13 @@
       "description": "Claude agents for converting user goals into structured execution plans and executing tasks step by step.",
       "version": "0.0.1",
       "category": "productivity"
+    },
+    {
+      "name": "todo",
+      "source": "./plugins/todo",
+      "description": "FIFO-based TODO queue management with push/approve/next/finish lifecycle.",
+      "version": "1.0.0",
+      "category": "productivity"
     }
   ]
 }
