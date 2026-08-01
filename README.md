@@ -7,6 +7,7 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ## Available plugins
 
 - `git-workflow`: create clear commit messages and push branches safely.
+- `claude-delegation`: delegate explicit tasks to Claude Code in Codex's current project.
 - `kanban`: save, list, and retrieve queued implementation work.
 
 ## Install plugins
@@ -24,6 +25,7 @@ platform-specific marketplace metadata and skill frontmatter live alongside it.
 ```bash
 codex plugin marketplace add https://github.com/coniferous-cmd/agent-plugins.git --ref main
 codex plugin add git-workflow@coniferous-cmd-plugins
+codex plugin add claude-delegation@coniferous-cmd-plugins
 codex plugin add kanban@coniferous-cmd-plugins
 ```
 

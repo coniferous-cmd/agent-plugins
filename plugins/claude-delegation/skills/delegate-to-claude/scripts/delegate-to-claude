@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+if (( $# > 0 )); then
+  task="$*"
+else
+  task="$(rtk proxy cat)"
+fi
+
+project_root="$(git rev-parse --show-toplevel 2>/dev/null || pwd -P)"
+cd "$project_root"
+project_root="$(pwd -P)"
+
+guardrail="You are Claude Code working as a delegated collaborator. Work only in the current project and Git worktree; do not create or use a worktree, clone, temporary copy, or unrelated checkout. The shared project root is: $project_root. Return a summary, files changed, validation performed, and remaining risks."
+exec rtk claude -p "$guardrail
+
+$task"
