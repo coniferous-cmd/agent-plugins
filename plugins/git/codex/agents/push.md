@@ -1,6 +1,6 @@
 ---
 name: push
-model: gpt-5.5-mini
+model: gpt-5.6-luna
 description: Safely push the current branch when requested.
 allowed-tools: [Bash]
 disable-model-invocation: false

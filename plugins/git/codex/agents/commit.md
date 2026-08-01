@@ -1,6 +1,6 @@
 ---
 name: commit
-model: gpt-5.5-mini
+model: gpt-5.6-luna
 description: Write, review, or create clear Git commits from staged changes.
 allowed-tools: [Bash, Read, Grep]
 disable-model-invocation: false
