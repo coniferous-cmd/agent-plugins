@@ -3,7 +3,7 @@ name: push
 description: Safely push the current branch when requested.
 model: haiku
 context: fork
-agent: Worker
+agent: Git Worker
 allowed-tools:
   - Read
   - Grep

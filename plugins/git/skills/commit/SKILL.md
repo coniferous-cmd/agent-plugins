@@ -3,7 +3,7 @@ name: commit
 description: Generate Conventional Commit messages from git diff
 model: haiku
 context: fork
-agent: Worker
+agent: Git Worker
 disable-model-invocation: true
 allowed-tools:
   - Read 
