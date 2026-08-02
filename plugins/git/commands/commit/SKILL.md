@@ -2,10 +2,9 @@
 name: commit
 description: Generate Conventional Commit messages from git diff
 argument-hint: '[--wait|--background] [--base <ref>] [--scope auto|working-tree|branch]'
-model: haiku
 ---
 
-# Git Commit Skill
+# Git Commit
 
 > Generate Git commit messages that follow the Conventional Commits specification based on git diff.
 
@@ -33,4 +32,3 @@ Workflow:
  2. Determine the change type
  3. Generate a commit message
  4. Execute the commit directly
-

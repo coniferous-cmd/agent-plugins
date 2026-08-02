@@ -31,11 +31,11 @@ When both platforms use identical agents or skills, place them in `shared/<name>
 
 This avoids duplicating identical configuration across `claude/` and `codex/` directories.
 
-### Plugin vs Agent
+### Plugin vs Agent vs Skill
 
 - **Plugin**: Package distributed via marketplace (has `plugin.json`)
 - **Agent**: Defined in `plugin.json` `agents:` field, a `.md` file with YAML frontmatter (`name`, `model`, `description`, `tools`)
-- **Skill**: Defined in `skills:` field, a `SKILL.md` file
+- **Skill**: Defined in `plugin.json` `skills:` field as `skills/<name>/SKILL.md`. Exposed as a slash command in Claude Code (e.g. `claude/skills/push/SKILL.md` registers `/push`). Use `argument-hint` to document `$ARGUMENTS` shape.
 
 ### Registration
 
@@ -43,8 +43,8 @@ Plugin registration requires two steps:
 
 1. **Create plugin config** in `plugins/<name>/`:
 
- - Claude: `.claude-plugin/plugin.json` — `agents: ["./claude/agents/..."]`
- - Codex: `.codex-plugin/plugin.json` — `agents: ["./codex/agents/..."]`
+ - Claude: `.claude-plugin/plugin.json` — `agents: ["./claude/agents/..."]` and/or `skills: ["./claude/skills/<name>/SKILL.md"]`
+ - Codex: `.codex-plugin/plugin.json` — `agents: ["./codex/agents/..."]` and/or `skills: ["./codex/skills/<name>/SKILL.md"]`
 
 2. **Register in root marketplace**:
 

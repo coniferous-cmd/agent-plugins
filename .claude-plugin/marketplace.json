@@ -8,15 +8,8 @@
     {
       "name": "git-workflow",
       "source": "./plugins/git",
-      "description": "Claude Code skills for writing clear Git commit messages and safely pushing commits.",
-      "version": "0.0.7",
-      "category": "productivity"
-    },
-    {
-      "name": "workflow",
-      "source": "./plugins/workflow",
-      "description": "Claude agents for converting user goals into structured execution plans and executing tasks step by step.",
-      "version": "0.0.1",
+      "description": "Claude Code commands for writing clear Git commit messages and safely pushing commits.",
+      "version": "0.0.8",
       "category": "productivity"
     }
   ]

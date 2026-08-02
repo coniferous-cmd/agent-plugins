@@ -1,8 +1,9 @@
 ---
 name: push
-model: haiku
 description: Safely push the current branch when requested.
 ---
+
+# Git Push
 
 Workflow:
  1. Check the current branch, its status, and its relationship to the upstream when one exists.
@@ -14,4 +15,3 @@ Rules:
  - Never use `--force` unless explicitly requested.
  - Never push a different branch unless explicitly requested.
  - Report errors briefly.
-
