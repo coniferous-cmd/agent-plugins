@@ -1,6 +1,14 @@
 ---
 name: push
 description: Safely push the current branch when requested.
+model: haiku
+context: fork
+agent: Worker
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Base(git:*)
 ---
 
 # Git Push
