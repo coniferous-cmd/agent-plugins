@@ -1,7 +1,6 @@
 ---
 name: commit
 description: Generate Conventional Commit messages from git diff
-argument-hint: '--language'
 model: haiku
 context: fork
 agent: Git Commit
