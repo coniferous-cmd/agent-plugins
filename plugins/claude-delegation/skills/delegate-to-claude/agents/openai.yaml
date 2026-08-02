@@ -1,4 +1,0 @@
-interface:
-  display_name: "Delegate to Claude"
-  short_description: "Run Claude in Codex's current project"
-  default_prompt: "Use $delegate-to-claude to ask Claude Code to review this task in the current project."
