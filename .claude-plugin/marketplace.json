@@ -9,7 +9,7 @@
       "name": "git-workflow",
       "source": "./plugins/git",
       "description": "Claude Code commands for writing clear Git commit messages and safely pushing commits.",
-      "version": "0.0.8",
+      "version": "0.1.0",
       "category": "productivity"
     }
   ]
