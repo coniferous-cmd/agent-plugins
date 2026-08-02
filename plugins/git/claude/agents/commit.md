@@ -1,6 +1,7 @@
 ---
 name: commit
 description: Generate Conventional Commit messages from git diff
+argument-hint: '[--wait|--background] [--base <ref>] [--scope auto|working-tree|branch]'
 model: haiku
 ---
 
