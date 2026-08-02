@@ -1,7 +1,7 @@
 {
   "name": "git-workflow",
   "description": "Claude skills for writing clear Git commit messages and safely pushing commits.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "agents": ["./claude/agents/commit-worker.md"],
   "author": {
     "name": "coniferous-cmd"
