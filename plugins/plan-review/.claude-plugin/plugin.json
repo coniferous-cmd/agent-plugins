@@ -11,5 +11,5 @@
       "marketplace": "openai-codex"
     }
   ],
-  "skills": ["./skills/plan-review/SKILL.md"]
+  "skills": ["./skills/plan-review"]
 }
