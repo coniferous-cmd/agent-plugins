@@ -4,7 +4,7 @@
   "owner": {
     "name": "coniferous-cmd"
   },
-  "allowCrossMarketplaceDependenciesOn": ["openai-codex"],
+  "allowCrossMarketplaceDependenciesOn": ["openai-codex", "obsidian-skills"],
   "plugins": [
     {
       "name": "git-workflow",
@@ -17,6 +17,13 @@
       "name": "plan-review",
       "source": "./plugins/plan-review",
       "description": "Draft implementation plans and have Codex Rescue audit them before execution.",
+      "version": "0.1.0",
+      "category": "productivity"
+    },
+    {
+      "name": "english-grammar-ledger",
+      "source": "./plugins/english-grammar-ledger",
+      "description": "Silently save clear English grammar corrections to date-organized Obsidian notes.",
       "version": "0.1.0",
       "category": "productivity"
     }

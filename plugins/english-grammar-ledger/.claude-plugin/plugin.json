@@ -1,0 +1,17 @@
+{
+  "name": "english-grammar-ledger",
+  "displayName": "English Grammar Ledger",
+  "description": "Silently records English grammar corrections in date-organized Obsidian notes during Claude Code conversations.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kepano/obsidian-skills",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "dependencies": [
+    {
+      "name": "obsidian",
+      "marketplace": "obsidian-skills"
+    }
+  ],
+  "hooks": "./hooks/hooks.json"
+}

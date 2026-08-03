@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "& \"${CLAUDE_PLUGIN_ROOT}\\scripts\\inject-grammar-ledger-context.ps1\"",
+            "timeout": 5,
+            "statusMessage": "Preparing response"
+          }
+        ]
+      }
+    ]
+  }
+}
