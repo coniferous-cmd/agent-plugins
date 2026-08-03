@@ -4,11 +4,19 @@
   "owner": {
     "name": "coniferous-cmd"
   },
+  "allowCrossMarketplaceDependenciesOn": ["openai-codex"],
   "plugins": [
     {
       "name": "git-workflow",
       "source": "./plugins/git",
       "description": "Claude Code commands for writing clear Git commit messages and safely pushing commits.",
+      "version": "0.1.0",
+      "category": "productivity"
+    },
+    {
+      "name": "plan-review",
+      "source": "./plugins/plan-review",
+      "description": "Draft implementation plans and have Codex Rescue audit them before execution.",
       "version": "0.1.0",
       "category": "productivity"
     }

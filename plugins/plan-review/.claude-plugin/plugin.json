@@ -1,0 +1,15 @@
+{
+  "name": "plan-review",
+  "description": "Create implementation plans and have Codex Rescue audit them before execution.",
+  "version": "0.1.0",
+  "author": {
+    "name": "coniferous-cmd"
+  },
+  "dependencies": [
+    {
+      "name": "codex",
+      "marketplace": "openai-codex"
+    }
+  ],
+  "skills": ["./skills/plan-review/SKILL.md"]
+}
