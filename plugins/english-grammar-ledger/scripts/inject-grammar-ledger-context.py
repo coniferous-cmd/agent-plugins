@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Cross-platform context injector for english-grammar-ledger hook.
 Injects translation + grammar fix reminder into UserPromptSubmit context.
