@@ -13,5 +13,4 @@
       "marketplace": "obsidian-skills"
     }
   ],
-  "hooks": "./hooks/hooks.json"
 }
