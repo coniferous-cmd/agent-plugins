@@ -6,7 +6,7 @@
           {
             "type": "command",
             "shell": "bash",
-            "command": "date_path=$(date '+%Y-%m-%d'); plugin_root=\"${CLAUDE_PLUGIN_ROOT:-$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\"/../.. && pwd)}\"; if [ -f /proc/version ] && grep -qi microsoft /proc/version 2>/dev/null; then export CLAUDE_PLUGIN_ROOT_WSL=\"$plugin_root\"; fi; os_type=$(uname -s 2>/dev/null || echo \"unknown\"); if [ \"$os_type\" = \"Linux\" ] || [ \"$os_type\" = \"Darwin\" ] || [ -n \"$CLAUDE_PLUGIN_ROOT_WSL\" ]; then script_dir=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"; . \"$script_dir/inject-grammar-ledger-context.sh\"; else powershell -ExecutionPolicy Bypass -File \"$plugin_root/scripts/inject-grammar-ledger-context.ps1\"; fi",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT:-$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\"/../.. && pwd)}/scripts/inject-grammar-ledger-context.py\"",
             "timeout": 5,
             "statusMessage": "Preparing response"
           }
