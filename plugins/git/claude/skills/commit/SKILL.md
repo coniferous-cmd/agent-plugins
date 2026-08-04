@@ -40,4 +40,3 @@ Workflow:
  2. Determine the change type
  3. Generate a commit message
  4. Execute the commit directly
-
