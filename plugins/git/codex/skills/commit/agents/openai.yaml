@@ -1,4 +1,4 @@
 interface:
   display_name: "Git Commit"
-  short_description: "Write clear commit messages from staged changes"
-  default_prompt: "Use $commit to write or review a focused Git commit message from the staged changes."
+  short_description: "Create clear commits with Git Worker"
+  default_prompt: "Use $commit with Git Worker to create a focused Git commit from the staged changes."

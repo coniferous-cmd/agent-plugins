@@ -1,24 +1,37 @@
 ---
 name: commit
-description: Write or review a clear Git commit message from staged changes.
-agent: Git Worker
+description: Use Git Worker to create a focused Git commit from staged changes with a clear Conventional Commit message. Use when the user asks to commit staged work or needs a commit message reviewed.
 ---
 
 # Git Commit
 
-Write or review a focused Conventional Commit message from the staged changes.
+> Generate Git commit messages that follow the Conventional Commits specification based on git diff.
 
-## Workflow
+## Format
 
-1. Inspect the repository status and staged diff.
-2. Follow the repository's commit convention when one exists.
-3. Use an imperative subject of no more than 72 characters and add a body only when useful.
-4. Return the commit message without extra commentary unless the user asks for an explanation.
+`<type>(scope): description`
+
+## Types
+
+- `feat`: new feature
+- `fix`: bug fix
+- `docs`: documentation
+- `refactor`: code restructuring
+- `test`: testing changes
+- `chore`: maintenance tasks
 
 ## Rules
 
-- Do not commit unless the user explicitly requests it.
-- Do not stage files automatically.
-- Do not include unstaged changes in the message unless the user explicitly asks for them.
-- Do not amend, rebase, or force-push unless explicitly requested.
-- Keep one commit focused and avoid generic subjects such as `update code` or `fix bug`.
+- Use imperative mood.
+- Work silently.
+- Describe user value or behavior changes.
+- Keep the first line under 72 characters.
+- Avoid vague messages such as `update code` or `fix bug`.
+- If changes contain modifications with clearly different logic, split them into separate commits.
+
+## Workflow
+
+1. Analyze the code changes and their context.
+2. Determine the change type.
+3. Generate a commit message.
+4. Execute the commit directly.
