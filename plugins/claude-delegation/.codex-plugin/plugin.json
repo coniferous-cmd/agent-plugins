@@ -1,0 +1,18 @@
+{
+  "name": "claude-delegation",
+  "version": "0.1.0",
+  "description": "Call the local Claude CLI and return schema-shaped JSON.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Claude Delegation",
+    "shortDescription": "Call Claude CLI for structured JSON.",
+    "longDescription": "Runs the authenticated Claude CLI through Python and emits one JSON result.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Claude JSON to return structured data for:"
+  }
+}
