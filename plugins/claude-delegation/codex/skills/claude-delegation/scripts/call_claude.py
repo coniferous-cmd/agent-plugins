@@ -39,17 +39,50 @@ def parse_model_json(text):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        usage=(
+            "%(prog)s --schema <file> [--prompt <text>|--stdin] [options]\n"
+            "       %(prog)s model <alias> --schema <file> <prompt text>   (short form)"
+        ),
+    )
+    parser.add_argument(
+        "positional",
+        nargs="*",
+        help=(
+            "Short form: `model <alias> <prompt text>` — first token must be the literal "
+            "`model`; second is the CLI model alias; remaining tokens join into the prompt."
+        ),
+    )
     parser.add_argument("--prompt", help="User prompt; read stdin when omitted.")
     parser.add_argument("--schema", required=True, help="JSON Schema file path or inline JSON.")
     parser.add_argument("--system", help="Optional Claude system prompt.")
-    parser.add_argument("--model", help="Optional Claude CLI model alias or ID.")
-    parser.add_argument("--max-turns", type=int, default=1, help="Maximum Claude CLI turns (default: 1).")
+    parser.add_argument(
+        "--model",
+        help=(
+            "Optional Claude CLI model alias (fast, balanced, or most capable). "
+            "Pass any alias accepted by `claude`; omit to use the Claude CLI default."
+        ),
+    )
+    parser.add_argument("--max-turns", type=int, default=3, help="Maximum Claude CLI turns (default: 3). Two turns cover Claude's occasional tool-probing even with --tools ''; raise if your prompt needs more.")
     args = parser.parse_args()
+
+    # Short form: `model <alias> <prompt text>`
+    if args.positional:
+        if args.positional[0] != "model":
+            emit({"ok": False, "error": {"type": "invalid_usage", "message": "First positional token must be `model` when using short form."}}, 2)
+        if len(args.positional) < 3:
+            emit({"ok": False, "error": {"type": "invalid_usage", "message": "Short form needs `model <alias> <prompt text>`."}}, 2)
+        if args.model:
+            emit({"ok": False, "error": {"type": "invalid_usage", "message": "`--model` and short form are mutually exclusive."}}, 2)
+        if args.prompt:
+            emit({"ok": False, "error": {"type": "invalid_usage", "message": "`--prompt` and short form are mutually exclusive."}}, 2)
+        args.model = args.positional[1]
+        args.prompt = " ".join(args.positional[2:])
 
     prompt = args.prompt if args.prompt is not None else sys.stdin.read()
     if not prompt.strip():
-        emit({"ok": False, "error": {"type": "invalid_prompt", "message": "Provide --prompt or stdin."}}, 2)
+        emit({"ok": False, "error": {"type": "invalid_prompt", "message": "Provide --prompt, stdin, or short-form positional prompt."}}, 2)
     schema = read_schema(args.schema)
     if not shutil.which("claude"):
         emit({"ok": False, "error": {"type": "claude_not_found", "message": "Install Claude Code and make 'claude' available on PATH."}}, 127)
@@ -75,8 +108,24 @@ def main():
         if not isinstance(outer, dict):
             raise ValueError("Claude CLI output must be a JSON object.")
         if completed.returncode != 0:
-            message = outer.get("result") or completed.stderr.strip()
-            emit({"ok": False, "error": {"type": "claude_failed", "message": message or "Claude CLI failed."}}, completed.returncode)
+            errors = outer.get("errors") if isinstance(outer.get("errors"), list) else None
+            subtype = outer.get("subtype")
+            message = (
+                (errors[0] if errors else None)
+                or outer.get("result")
+                or completed.stderr.strip()
+                or f"Claude CLI failed (subtype={subtype!r}, is_error={outer.get('is_error')})."
+            )
+            emit({
+                "ok": False,
+                "error": {
+                    "type": "claude_failed",
+                    "message": message,
+                    "subtype": subtype,
+                    "errors": errors,
+                    "is_error": outer.get("is_error"),
+                },
+            }, completed.returncode)
         structured = outer.get("structured_output", outer.get("result"))
         result = parse_model_json(structured) if isinstance(structured, str) else structured
         if not isinstance(result, dict):
