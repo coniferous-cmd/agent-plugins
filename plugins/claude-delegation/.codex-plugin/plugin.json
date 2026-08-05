@@ -5,7 +5,9 @@
   "author": {
     "name": "Local developer"
   },
-  "skills": "./skills/",
+  "skills": [
+    "./codex/skills/claude-delegation/SKILL.md"
+  ],
   "interface": {
     "displayName": "Claude Delegation",
     "shortDescription": "Call Claude CLI for structured JSON.",
@@ -13,6 +15,6 @@
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Use Claude JSON to return structured data for:"
+    "defaultPrompt": "Use Claude Delegation to return structured data for:"
   }
 }
