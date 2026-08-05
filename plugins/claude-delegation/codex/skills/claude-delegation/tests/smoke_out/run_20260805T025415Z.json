@@ -1,0 +1,13 @@
+{
+  "_exit_code": 0,
+  "_stderr": "",
+  "metadata": {
+    "model": null,
+    "session_id": "e722d53c-46c3-4841-a166-5909f69de8dd"
+  },
+  "ok": true,
+  "result": {
+    "answer": "I am powered by the model MiniMax-M2.7.",
+    "model": "MiniMax-M2.7"
+  }
+}
