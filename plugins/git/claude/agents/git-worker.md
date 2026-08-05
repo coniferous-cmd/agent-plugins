@@ -1,4 +1,3 @@
-
 ---
 name: Git Worker
 description: Simple worker subagent

@@ -1,0 +1,15 @@
+{
+  "name": "git-workflow",
+  "description": "Codex skill for writing clear Git commit messages from staged changes.",
+  "version": "0.1.0",
+  "agents": [
+    "./codex/agents/git-worker.md"
+  ],
+  "skills": [
+    "./codex/skills/commit",
+    "./codex/skills/push"
+  ],
+  "author": {
+    "name": "coniferous-cmd"
+  }
+}

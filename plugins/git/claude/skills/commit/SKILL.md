@@ -34,10 +34,10 @@ Rules:
  - Describe user value or behavior changes
  - Keep the first line under 72 characters
  - Avoid vague messages like "update code" or "fix bug"
+ - If changes contain modifications with clearly different logic, split them into separate commits
 
 Workflow:
  1. Analyze the code changes and their context
  2. Determine the change type
  3. Generate a commit message
  4. Execute the commit directly
-

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Commit"
+  short_description: "Create clear commits with Git Worker"
+  default_prompt: "Use $commit with Git Worker to create a focused Git commit from the staged changes."
